@@ -16,8 +16,10 @@
           </div>
           <div class="card-action">
             <%= link_to '<i class="mdi-image-remove-red-eye"></i>'.html_safe, note, class: "waves-effect waves-dark btn grey lighter-1 black-text" %>
-            <%= link_to '<i class="mdi-editor-mode-edit"></i>'.html_safe, edit_note_path(note), class: "waves-effect waves-dark btn blue darker-1 white-text" %>
-            <%= link_to '<i class="mdi-action-delete"></i>'.html_safe, note, method: :delete, data: { confirm: 'Are you sure?' }, class: "waves-effect waves-dark btn red darker-1 white-text" %>
+            <% if user_signed_in? && note.user == current_user %>
+                <%= link_to '<i class="mdi-editor-mode-edit"></i>'.html_safe, edit_note_path(note), class: "waves-effect waves-dark btn blue darker-1 white-text" %>
+                <%= link_to '<i class="mdi-action-delete"></i>'.html_safe, note, method: :delete, data: { confirm: 'Are you sure?' }, class: "waves-effect waves-dark btn red darker-1 white-text" %>
+            <% end %>
           </div>
         </div>
       </div>
