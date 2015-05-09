@@ -12,7 +12,7 @@
         <div class="card-panel grey lighten-5 z-depth-3">
           <div class="card-content grey-text">
             <span class="card-title black-text"><%= note.title %></span>
-            <p class="truncate"><%= note.description %></p>
+            <p><%= note.description.truncate(50).html_safe %></p>
           </div>
           <div class="card-action">
             <%= link_to '<i class="mdi-image-remove-red-eye"></i>'.html_safe, note, class: "waves-effect waves-dark btn grey lighter-1 black-text" %>

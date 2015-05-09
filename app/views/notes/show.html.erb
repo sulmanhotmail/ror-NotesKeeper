@@ -5,7 +5,7 @@
         <span class="card-title black-text"><%= @note.title %></span>
         <div class="row">
           <div class="col s12">
-            <%= @note.description %>
+            <%= @note.description.html_safe %>
           </div>
         </div>
         <div class="card-action">
