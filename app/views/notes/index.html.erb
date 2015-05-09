@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="col s12 m6 offset-m3">
+    <div class="card-panel grey lighten-5">
+      <h6 class="black-text flow-text center-align">NOTES</h6>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <% @notes.each do |note| %>
+
+      <div class="col s12 m6 l4">
+        <div class="card-panel grey lighten-5 z-depth-3">
+          <div class="card-content grey-text">
+            <span class="card-title black-text"><%= note.title %></span>
+            <p class="truncate"><%= note.description %></p>
+          </div>
+          <div class="card-action">
+            <%= link_to '<i class="mdi-image-remove-red-eye"></i>'.html_safe, note, class: "waves-effect waves-dark btn grey lighter-1 black-text" %>
+            <%= link_to '<i class="mdi-editor-mode-edit"></i>'.html_safe, edit_note_path(note), class: "waves-effect waves-dark btn blue darker-1 white-text" %>
+            <%= link_to '<i class="mdi-action-delete"></i>'.html_safe, note, method: :delete, data: { confirm: 'Are you sure?' }, class: "waves-effect waves-dark btn red darker-1 white-text" %>
+          </div>
+        </div>
+      </div>
+
+  <% end %>
+</div>
+
+<div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+  <%= link_to '<i class="mdi-content-add"></i>'.html_safe, new_note_path, class:"btn-floating btn-large waves-effect waves-light red" %>
+</div>

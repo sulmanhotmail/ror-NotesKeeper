@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="col s12 m6 offset-m3">
+    <div class="card grey lighten-5 z-depth-5">
+      <div class="card-content black-text">
+        <span class="card-title black-text"><%= @note.title %></span>
+        <div class="row">
+          <div class="col s12">
+            <%= @note.description %>
+          </div>
+        </div>
+        <div class="card-action">
+          <%= link_to '<i class="mdi-content-backspace left"></i> Back'.html_safe, notes_path, class: 'waves-effect waves-light btn red darken-4 white-text' %>
+          <%= link_to '<i class="mdi-editor-mode-edit left"></i> Edit'.html_safe, edit_note_path(@note), class: 'waves-effect waves-light btn blue darken-4 white-text' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
