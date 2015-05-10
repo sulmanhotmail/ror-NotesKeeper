@@ -9,6 +9,8 @@
         <div class="row">
           <div class="col s12">
             <%= @note.description.html_safe %>
+            <p class="right grey-text">Created by: <%= @note.user.email %></p><br>
+            <p class="right grey-text"><%= time_ago_in_words(@note.created_at) %> ago</p>
           </div>
         </div>
         <div class="card-action">
