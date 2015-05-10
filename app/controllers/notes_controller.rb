@@ -5,7 +5,7 @@ class NotesController < ApplicationController
   # GET /notes
   # GET /notes.json
   def index
-    @notes = current_user.notes.all
+    @notes = current_user.notes.order(:created_at => 'DESC').page(params[:page]).per(6)
   end
 
   # GET /notes/1

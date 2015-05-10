@@ -15,6 +15,7 @@ gem "pundit"
 gem 'has_secure_token'
 gem 'friendly_id'
 gem 'zeroclipboard-rails'
+gem 'kaminari'
 
 group :development, :test do
   gem 'byebug'

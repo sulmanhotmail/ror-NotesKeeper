@@ -6,9 +6,9 @@
   </div>
 </div>
 <div class="row">
-  <%= render @notes %>
+    <%= render @notes %>
 </div>
-
+    <%= paginate @notes %>
 <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
   <%= link_to '<i class="mdi-content-add"></i>'.html_safe, new_note_path, class:"btn-floating btn-large waves-effect waves-light red" %>
 </div>
