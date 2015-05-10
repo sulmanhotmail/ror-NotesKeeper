@@ -10,7 +10,7 @@ module DeviseHelper
     html = <<-HTML
     <script>
 $(document).ready(function(){
-      Materialize.toast('#{messages}', 10000, 'rounded');
+      Materialize.toast('#{messages}', 6000, 'rounded');
 });
     </script>
     HTML
