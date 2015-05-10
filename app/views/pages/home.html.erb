@@ -1,6 +1,6 @@
-<div class="parallax-container">
-  <div class="parallax"><%= image_tag 'parallax2.jpg' %></div>
-</div>
+<% content_for :title do %>
+    Home |
+<% end %>
 <div class="section white">
   <div class="row container">
     <h2 class="header">Key-Note</h2>
@@ -8,6 +8,9 @@
     <p><%= link_to '<i class="mdi-social-person-add left"></i> Sign Up'.html_safe, new_user_registration_path, class: 'waves-effect waves-light btn-large light-blue darken-4' %>
       <%= link_to '<i class="mdi-social-person left"></i> Log In'.html_safe, new_user_session_path, class: 'waves-effect waves-light btn-large light-green darken-4' %></p>
   </div>
+</div>
+<div class="parallax-container">
+  <div class="parallax"><%= image_tag 'parallax2.jpg' %></div>
 </div>
 <!--<div class="parallax-container">-->
   <!--<div class="parallax"><%= image_tag 'parallax2.jpg' %></div>-->
