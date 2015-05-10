@@ -2,20 +2,47 @@
   <div class="col s12 m10 offset-m1 l8 offset-l2">
     <div class="card grey lighten-5 z-depth-5">
       <div class="card-content black-text">
-        <span class="card-title black-text"><%= @note.title %></span>
+        <span class="card-title black-text"><%= @note.title %></span><a class="waves-effect waves-light btn modal-trigger white-text right" href="#modal1"><i class="mdi-social-share left"></i>Share</a>
         <div class="row">
           <div class="col s12">
             <%= @note.description.html_safe %>
           </div>
         </div>
         <div class="card-action">
-          <%= link_to '<i class="mdi-content-backspace left"></i> Back'.html_safe, root_path, class: 'waves-effect waves-light btn red darken-4 white-text' %>
+          <%= link_to '<i class="mdi-content-backspace left"></i>Back'.html_safe, root_path, class: 'waves-effect waves-light btn red darken-4 white-text' %>
           <% if user_signed_in? && @note.user == current_user %>
-              <%= link_to '<i class="mdi-editor-mode-edit left"></i> Edit'.html_safe, edit_note_path(@note), class: 'waves-effect waves-light btn blue darken-4 white-text' %>
+              <%= link_to '<i class="mdi-editor-mode-edit left"></i>Edit'.html_safe, edit_note_path(@note), class: 'waves-effect waves-light btn blue darken-4 white-text' %>
           <% end %>
+          <!-- Modal Trigger -->
+
+          <!-- Modal Structure -->
+          <div id="modal1" class="modal">
+            <div class="modal-content">
+              <h4>Shareable Link</h4>
+              <p>Your share link is below: (click copy to automatically copy link)</p>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input value="<%= note_url(@note) %>" id="fe_text" type="text" class="validate">
+                  <label class="active" for="fe_text">URL</label>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <a href="" data-clipboard-target='fe_text' data-clipboard-text='Default clipboard text from attribute' id='d_clip_button' class=" modal-action modal-close waves-effect waves-light btn white-text right"><i class="mdi-content-content-copy left"></i> Copy Link To Clipboard</a>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
   </div>
 </div>
-
+<script>
+    $(document).ready(function(){
+// the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+        $('.modal-trigger').leanModal();
+        var clip = new ZeroClipboard($("a#d_clip_button"))
+        clip.on( 'aftercopy', function(event) {
+        } );
+    });
+</script>

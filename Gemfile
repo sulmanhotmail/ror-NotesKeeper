@@ -36,6 +36,9 @@ gem 'materialize-sass'
 gem 'devise'
 gem 'ckeditor_rails'
 gem "pundit"
+gem 'has_secure_token'
+gem 'friendly_id'
+gem 'zeroclipboard-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

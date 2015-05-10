@@ -27,7 +27,7 @@ class NotesController < ApplicationController
   # POST /notes.json
   def create
     @note = current_user.notes.new(note_params)
-
+    @note.token = SecureRandom.hex(10).upcase
     respond_to do |format|
       if @note.save
         format.html { redirect_to @note, notice: 'Note was successfully created.' }
@@ -68,7 +68,8 @@ class NotesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_note
-      @note = Note.find(params[:id])
+      #@note = Note.friendly.find(params[:id])
+      @note = Note.find_by_slug(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
