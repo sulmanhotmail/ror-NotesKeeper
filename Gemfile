@@ -10,12 +10,12 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'materialize-sass'
 gem 'devise'
-gem 'ckeditor_rails'
 gem "pundit"
 gem 'has_secure_token'
 gem 'friendly_id'
 gem 'zeroclipboard-rails'
 gem 'kaminari'
+gem 'tinymce-rails'
 
 group :development, :test do
   gem 'byebug'

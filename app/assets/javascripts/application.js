@@ -13,7 +13,7 @@
 //= require jquery
 //= require materialize-sprockets
 //= require jquery_ujs
-//= require ckeditor-jquery
+//= require tinymce-jquery
 //= require zeroclipboard
 //= require turbolinks
 //= require_tree .
